@@ -13,7 +13,7 @@ const app = express();
 
 app.use(helmet());
 const clientUrl = process.env.CLIENT_URL || 'http://localhost:3000';
-app.use(cors({ origin: clientUrl, credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 
 const stream = { write: message => winston.info(message.trim()) };
